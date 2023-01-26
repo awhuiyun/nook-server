@@ -13,7 +13,13 @@ app.get("/notion-data", async (req, res) => {
   // Get data from API
   const result = await getData(id);
   const data = result.map((item) => {
-    if (item[item.type].rich_text.length === 0) {
+    if (item.type === "image") {
+      return {
+        type: "image",
+        content: item[item.type].file.url,
+        annotations: "",
+      };
+    } else if (item[item.type].rich_text.length === 0) {
       return {
         type: "line_break",
         content: "",
@@ -28,13 +34,9 @@ app.get("/notion-data", async (req, res) => {
     }
   });
   res.send(data);
-
-  // Original data:
-  console.log(result);
-  // console.log(data);
 });
 
 app.listen(
   process.env.PORT,
-  console.log("Yay, server is running on Port 3000")
+  console.log("Yay, server is running on Port 5000")
 );
