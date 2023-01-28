@@ -5,5 +5,7 @@ Nook is a site for indie writers to publish their books and get paid for their w
 This repository is for the backend. You may find the frontend repository [HERE](https://github.com/awhuiyun/nook).
 
 ![Explore Page screenshot](images/ExplorePage.png)
+
 ![Book Details Page screenshot](images/BookDetailsPage.png)
+
 ![Example of obfuscation screenshot](images/ObfuscateExample.png)
